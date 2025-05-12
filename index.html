@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guess The Game With Emojis</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <h1>🎮 Guess The Game With Emojis</h1>
+            <div class="nav-buttons">
+                <button id="leaderboardBtn">🏆</button>
+                <button id="themeToggle">🌙</button>
+                <button id="logoutBtn" style="display: none;">Logout</button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <h2>Welcome to Guess The Game!</h2>
+            <div class="login-form">
+                <input type="text" id="usernameInput" placeholder="Enter your username">
+                <button id="loginBtn">Start Playing</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Leaderboard Modal -->
+    <div id="leaderboardModal" class="modal">
+        <div class="modal-content">
+            <h2>🏆 Leaderboard</h2>
+            <div class="leaderboard-container">
+                <table id="leaderboardTable">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Username</th>
+                            <th>High Score</th>
+                            <th>Games Played</th>
+                        </tr>
+                    </thead>
+                    <tbody id="leaderboardBody">
+                    </tbody>
+                </table>
+            </div>
+            <button class="close-modal">Close</button>
+        </div>
+    </div>
+
+    <main>
+        <div class="game-container">
+            <div class="user-info">
+                <span id="currentUser">Guest</span>
+            </div>
+            <div class="score-container">
+                <div class="score-box">
+                    <span class="score-label">Score</span>
+                    <span id="score" class="score-value">0</span>
+                </div>
+                <div class="score-box">
+                    <span class="score-label">High Score</span>
+                    <span id="highScore" class="score-value">0</span>
+                </div>
+            </div>
+
+            <div class="emojis-container">
+                <div id="emojis"></div>
+            </div>
+
+            <div class="input-container">
+                <input type="text" id="guessInput" placeholder="Enter game name...">
+                <button id="submitGuess">Submit</button>
+            </div>
+
+            <div id="message" class="message"></div>
+
+            <div class="controls">
+                <button id="newGame">New Game</button>
+                <button id="hint">Hint</button>
+            </div>
+
+            <div class="instructions">
+                <h2>How to Play</h2>
+                <div class="instructions-content">
+                    <div class="instruction-item">
+                        <span class="instruction-number">1</span>
+                        <p>Look at the emojis shown above and try to guess which video game they represent.</p>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="instruction-number">2</span>
+                        <p>Type your guess in the input field and press Enter or click Submit.</p>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="instruction-number">3</span>
+                        <p>You have 3 attempts to guess correctly.</p>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="instruction-number">4</span>
+                        <p>If you're stuck, use the Hint button for a clue.</p>
+                    </div>
+                    <div class="instruction-item">
+                        <span class="instruction-number">5</span>
+                        <p>Correct guess: +10 points, Wrong guess: -5 points</p>
+                    </div>
+                    <br>
+                </div>
+            </div>
+        </div>
+        <br><br>
+    </main>
+
+    <footer>
+        <p>Created by Sabri Yılmaz and Salih Batuhan Şener, for MBP 214 Web Programming Course</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
