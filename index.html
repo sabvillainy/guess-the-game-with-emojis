@@ -7,34 +7,36 @@
     <title>Guess The Game With Emojis</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 </head>
 
 <body>
-    <header>
-        <nav>
-            <h1>🎮 Guess The Game With Emojis</h1>
+    <header class="main-header">
+        <nav class="navbar">
+            <h1 class="logo">🎮 Guess The Game With Emojis</h1>
             <div class="nav-buttons">
-                <button id="leaderboardBtn">🏆</button>
-                <button id="themeToggle">🌙</button>
-                <button id="logoutBtn" style="display: none;">Logout</button>
+                <button id="leaderboardBtn" class="icon-btn" title="Leaderboard">🏆</button>
+                <button id="themeToggle" class="icon-btn" title="Toggle Theme">🌙</button>
+                <button id="logoutBtn" class="icon-btn logout-btn" style="display: none;">Logout</button>
             </div>
         </nav>
     </header>
 
     <!-- Login Modal -->
     <div id="loginModal" class="modal">
-        <div class="modal-content">
-            <h2>Welcome to Guess The Game!</h2>
+        <div class="modal-content login-modal-content">
+            <h2>Welcome!</h2>
+            <p class="modal-desc">Enter your username to start playing</p>
             <div class="login-form">
                 <input type="text" id="usernameInput" placeholder="Enter your username">
-                <button id="loginBtn">Start Playing</button>
+                <button id="loginBtn" class="primary-btn">Start Playing</button>
             </div>
         </div>
     </div>
 
     <!-- Leaderboard Modal -->
     <div id="leaderboardModal" class="modal">
-        <div class="modal-content">
+        <div class="modal-content leaderboard-modal-content">
             <h2>🏆 Leaderboard</h2>
             <div class="leaderboard-container">
                 <table id="leaderboardTable">
@@ -50,14 +52,14 @@
                     </tbody>
                 </table>
             </div>
-            <button class="close-modal">Close</button>
+            <button class="close-modal secondary-btn">Close</button>
         </div>
     </div>
 
     <main>
-        <div class="game-container">
+        <div class="game-container card">
             <div class="user-info">
-                <span id="currentUser">Guest</span>
+                <span id="currentUser" class="user-badge">Guest</span>
             </div>
             <div class="score-container">
                 <div class="score-box">
@@ -76,48 +78,103 @@
 
             <div class="input-container">
                 <input type="text" id="guessInput" placeholder="Enter game name...">
-                <button id="submitGuess">Submit</button>
+                <button id="submitGuess" class="primary-btn">Submit</button>
             </div>
 
             <div id="message" class="message"></div>
 
             <div class="controls">
-                <button id="newGame">New Game</button>
-                <button id="hint">Hint</button>
+                <button id="newGame" class="secondary-btn">New Game</button>
+                <button id="hint" class="secondary-btn">Hint</button>
             </div>
 
-            <div class="instructions">
-                <h2>How to Play</h2>
-                <div class="instructions-content">
-                    <div class="instruction-item">
-                        <span class="instruction-number">1</span>
-                        <p>Look at the emojis shown above and try to guess which video game they represent.</p>
+            <div class="instructions-modern">
+                <h2><i class="fa-solid fa-lightbulb"></i> How to Play</h2>
+                <div class="instructions-steps">
+                    <div class="step-card">
+                        <div class="step-icon"><i class="fa-solid fa-gamepad"></i></div>
+                        <div class="step-content">
+                            <div class="step-title">Emojis</div>
+                            <div class="step-desc">Look at the emojis and try to guess which video game they represent.
+                            </div>
+                        </div>
                     </div>
-                    <div class="instruction-item">
-                        <span class="instruction-number">2</span>
-                        <p>Type your guess in the input field and press Enter or click Submit.</p>
+                    <div class="step-card">
+                        <div class="step-icon"><i class="fa-solid fa-keyboard"></i></div>
+                        <div class="step-content">
+                            <div class="step-title">Type & Submit</div>
+                            <div class="step-desc">Type your guess and press Enter or click Submit.</div>
+                        </div>
                     </div>
-                    <div class="instruction-item">
-                        <span class="instruction-number">3</span>
-                        <p>You have 3 attempts to guess correctly.</p>
+                    <div class="step-card">
+                        <div class="step-icon"><i class="fa-solid fa-bolt"></i></div>
+                        <div class="step-content">
+                            <div class="step-title">Attempts</div>
+                            <div class="step-desc">You have 3 attempts for each game.</div>
+                        </div>
                     </div>
-                    <div class="instruction-item">
-                        <span class="instruction-number">4</span>
-                        <p>If you're stuck, use the Hint button for a clue.</p>
+                    <div class="step-card">
+                        <div class="step-icon"><i class="fa-solid fa-question-circle"></i></div>
+                        <div class="step-content">
+                            <div class="step-title">Need Help?</div>
+                            <div class="step-desc">Use the Hint button for a clue.</div>
+                        </div>
                     </div>
-                    <div class="instruction-item">
-                        <span class="instruction-number">5</span>
-                        <p>Correct guess: +10 points, Wrong guess: -5 points</p>
+                    <div class="step-card">
+                        <div class="step-icon"><i class="fa-solid fa-trophy"></i></div>
+                        <div class="step-content">
+                            <div class="step-title">Scoring</div>
+                            <div class="step-desc">Correct guess: +10 points, Wrong guess: -5 points</div>
+                        </div>
                     </div>
                     <br>
                 </div>
             </div>
+
+            <div class="repo-link">
+                <a href="https://github.com/sabriyilmaz/guess-the-game-with-emojis" target="_blank" rel="noopener"
+                    class="repo-btn"><i class="fa-brands fa-github"></i> View on GitHub</a>
+            </div>
         </div>
-        <br><br>
+
+        <div class="developers-modern">
+            <h3 class="developers-title"><i class="fa-solid fa-users"></i> Developers</h3>
+            <div class="dev-card">
+                <div class="dev-avatar" style="background:#6C63FF;">SY</div>
+                <div class="dev-info">
+                    <div class="dev-name">Sabri Yılmaz</div>
+                    <div class="dev-links">
+                        <a href="https://github.com/sabriyilmaz" target="_blank" title="GitHub"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/sabriyilmaz/" target="_blank" title="LinkedIn"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="dev-card">
+                <div class="dev-avatar" style="background:#F59E42;">SBS</div>
+                <div class="dev-info">
+                    <div class="dev-name">Salih Batuhan Şener</div>
+                    <div class="dev-links">
+                        <a href="https://github.com/batuhansener" target="_blank" title="GitHub"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/batuhansener/" target="_blank" title="LinkedIn"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </main>
 
     <footer>
-        <p>Created by Sabri Yılmaz and Salih Batuhan Şener, for MBP 214 Web Programming Course</p>
+        <div class="footer-content">
+            <div class="footer-title">Guess The Game With Emojis</div>
+            <div class="footer-desc">A modern, interactive web game project for MBP 214 Web Programming.<br>
+                Developed by <a href="https://github.com/sabriyilmaz" target="_blank">Sabri Yılmaz</a> &amp; <a
+                    href="https://github.com/batuhansener" target="_blank">Salih Batuhan Şener</a>.<br>
+                <span class="footer-year">&copy; 2025</span>
+            </div>
+        </div>
     </footer>
 
     <script src="script.js"></script>
