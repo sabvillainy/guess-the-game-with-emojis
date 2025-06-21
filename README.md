@@ -5,7 +5,9 @@ An interactive and fun web-based game where players guess popular video games ba
 ## 🚀 Live Demo
 [Play the Game](https://sabvillainy.github.io/guess-the-game-with-emojis/)
 
-![image](https://github.com/user-attachments/assets/41189f0c-c1be-47db-a813-5e82f32df880)
+![image](https://github.com/user-attachments/assets/0a1d105d-0563-4ce7-ae4d-b56288209fa5)
+
+
 
 
 ## 🌟 Features
@@ -141,21 +143,47 @@ Contributions are welcome! Please feel free to submit a Pull Request. For major 
 4. Push to the branch (`git push origin feature/AmazingFeature`)
 5. Open a Pull Request
 
-### Ideas for Contributions
+## 🚀 Future Enhancement Ideas
 
-- Add more game categories
-- Implement difficulty levels
-- Add more animations
-- Implement user profiles
-- Add more game statistics
-- Create daily challenges
+### 🔐 User Authentication & Database
 
-## 📊 Project Stats
+- Implement a real backend database system (PostgreSQL, MongoDB)
+- User registration with email and password authentication
+- Secure login system with password hashing
+- Cross-device account synchronization
+- User profile management with avatars and preferences
 
-- **Languages**: HTML, CSS, JavaScript
-- **Size**: Lightweight (~50KB total)
-- **Dependencies**: Font Awesome, Google Fonts
-- **Performance**: Fast loading, optimized for mobile
+### 🎯 Progressive Emoji Reveal System
+
+- Start each game with only the first emoji visible
+- Show remaining 4 emojis as "?" mystery symbols
+- Reveal next emoji with each wrong guess
+- Progressive hint system that unlocks with each reveal:
+  - Game release year
+  - Game genre/category
+  - Gaming platform (PC, Console, Mobile)
+  - Developer/Publisher information
+  - Key gameplay mechanics
+
+### ⏱️ Timed Challenge Mode
+
+- Speed-based scoring system — faster answers = more points
+- Countdown timer for each question
+- Time pressure mechanics for competitive play
+- Streak multipliers for consecutive correct answers
+- Rush mode with rapid-fire questions
+- Daily/weekly timed challenges with special rewards
+
+### 📊 Advanced Features
+
+- Detailed player statistics and analytics
+- Achievement badge system
+- Seasonal leaderboards with periodic resets
+- Tournament brackets and competitive events
+- Social sharing of high scores and achievements
+- Custom difficulty levels (Easy/Medium/Hard)
+- Player-generated content (create your own emoji puzzles)
+
 
 ---
 
